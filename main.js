@@ -106,9 +106,7 @@ const isCretaceous = function(thisDino){
 }
 return thisDinoObj.period === 'Cretaceous'
 }
-/***********************
- * ITERATION FUNCTIONS *
- **********************/
+
 const isFirstAlphabeticallyBySpecies = function (dino, dino2) {
   if (dino.species > dino2.species) {
     return 1;
@@ -167,7 +165,13 @@ return -1;
 
 
   }
+  /***********************
+ * ITERATION FUNCTIONS *
+ **********************/
+const singularizeDinos = function(thisDino){
+  return thisDino.map(makeSingular)
 
+}
 
 /*********************************
  * TEST SETUP CODE - DON'T TOUCH!*
