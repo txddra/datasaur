@@ -76,10 +76,90 @@ const isExtinct = function(thisDino){
 return thisDinoObj.extinct
 }
 
+const isTriassic = function(thisDino){
+  const thisDinoObj = {
+    species: thisDino.species,
+    period: thisDino.period,
+    carnivore: thisDino.carnivore,
+    extinct: thisDino.extinct,
+}
+return thisDinoObj.period === 'Triassic'
+}
+
+
+const isJurassic = function(thisDino){
+  const thisDinoObj = {
+    species: thisDino.species,
+    period: thisDino.period,
+    carnivore: thisDino.carnivore,
+    extinct: thisDino.extinct,
+}
+return thisDino.period === 'Jurassic'
+}
+
+const isCretaceous = function(thisDino){
+  const thisDinoObj = {
+    species: thisDino.species,
+    period: thisDino.period,
+    carnivore: thisDino.carnivore,
+    extinct: thisDino.extinct,
+}
+return thisDinoObj.period === 'Cretaceous'
+}
 /***********************
  * ITERATION FUNCTIONS *
  **********************/
+const isFirstAlphabeticallyBySpecies = function (dino, dino2) {
+  if (dino.species > dino2.species) {
+    return 1;
+  } else if (dino.species < dino2.species) {
+    return -1;
+  } 
+    return 0;
+  }
 
+  const extinctIsLast = function (dino, dino2) {
+    if (dino.extinct > dino2.extinct) {
+    return 1;
+  } else if (dino.extinct < dino2.extinct) {
+    return -1;
+  } 
+    return 0;
+  }
+
+const carnivoreIsFirst = function(dino, dino2){
+  if(dino.carnivore < dino2.carnivore){
+    return 1;
+  }else if(dino.carnivore > dino2.carnivore){
+    return -1;
+  }
+  return 0;
+  }
+// Note: the period order is:
+// Triassic, THEN
+// Jurassic, THEN
+// Creataceous
+
+// returns a positive number if the first dino is from the Jurassic and the second is from the Triassic. (2ms)
+//     ✕ returns a positive number if the first dino is from the Cretaceous and the second is from the Triassic.
+//     ✕ returns a positive number if the first dino is from the Cretaceous and the second is from the Jurassic. (1ms)
+//     ✕ returns a negative number if the first dino is from the Jurassic and the second is from the Cretaceous.
+//     ✕ returns a negative number if the first dino is from the Triassic and the second is from the Cretaceous. (1ms)
+//     ✕ returns a negative number if the first dino is from the Triassic and the second is from the Jurassic.
+//     ✕ returns 0 if the diets are the same
+  const isInPeriodOrder = function(dino, dino2){
+  if(dino.period === 'Jurassic' && dino2.period === 'Triassic'){
+return 1;
+  }else if(dino.period === 'Cretaceous' && dino2.period === 'Triassic'){
+  return 1;
+  }else if(dino.period === 'Cretaceous' && dino2.period === 'Jurassic'){
+  return 1;
+  }else if (dino.period === 'Jurassic' && dino2.period === 'Cretaceous'){
+return -1;
+  }
+
+
+  }
 
 
 /*********************************
