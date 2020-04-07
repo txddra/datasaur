@@ -50,11 +50,31 @@ const makeExtinct = function(thisDino){
     carnivore: thisDino.carnivore,
     extinct: thisDino.extinct,
   }
-
-  thisDinoObj.extinct = true
+thisDinoObj.extinct = true
+  
   return thisDinoObj
+  
 }  
 
+const isCarnivore = function(thisDino){
+  const thisDinoObj = {
+    species: thisDino.species,
+    period: thisDino.period,
+    carnivore: thisDino.carnivore,
+    extinct: thisDino.extinct,
+  }
+  return thisDinoObj.carnivore
+}
+
+const isExtinct = function(thisDino){
+  const thisDinoObj = {
+    species: thisDino.species,
+    period: thisDino.period,
+    carnivore: thisDino.carnivore,
+    extinct: thisDino.extinct,
+}
+return thisDinoObj.extinct
+}
 
 /***********************
  * ITERATION FUNCTIONS *
