@@ -26,7 +26,35 @@ if(thisDinoObj.species.endsWith('us')){
 return thisDinoObj;
 
 }
-// const truncateSpecies
+const truncateSpecies = function(thisDino){
+  
+    const thisDinoObj = {
+      species: thisDino.species,
+      period: thisDino.period,
+      carnivore: thisDino.carnivore,
+      extinct: thisDino.extinct,
+    }
+    if (thisDinoObj.species.length > 10 ){
+      thisDinoObj.species = thisDinoObj.species.slice(0,7) + "..."
+      }else {
+    thisDinoObj.species = thisDinoObj.species
+      }
+    return thisDinoObj
+  }
+
+const makeExtinct = function(thisDino){
+ 
+  const thisDinoObj = {
+    species: thisDino.species,
+    period: thisDino.period,
+    carnivore: thisDino.carnivore,
+    extinct: thisDino.extinct,
+  }
+
+  thisDinoObj.extinct = true
+  return thisDinoObj
+}  
+
 
 /***********************
  * ITERATION FUNCTIONS *
