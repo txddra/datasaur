@@ -156,7 +156,14 @@ return 1;
   return 1;
   }else if (dino.period === 'Jurassic' && dino2.period === 'Cretaceous'){
 return -1;
+  }else if(dino.period === 'Triassic' && dino2.period === 'Jurassic'){
+    return -1;
+
+  }else if(dino.period === 'Triassic' && dino2.period === 'Cretaceous'){
+    return -1;
   }
+  // }else if(dino.carnivore === true && dino2.carnivore === true)
+  return 0
 
 
   }
