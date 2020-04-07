@@ -1,8 +1,32 @@
 /********************
  * HELPER FUNCTIONS *
  ********************/
+const makeDino = function(species, period, diet, status = false){
+  const thisDino = {
+    species: species,
+    period: period,
+    carnivore: diet,
+    extinct: status,
+  };
+  return thisDino;
 
+};
 
+const makeSingular = function(obj){
+  const thisDinoObj = {
+  species: obj.species,
+  period: obj.period,
+  carnivore: obj.carnivore,
+  extinct: obj.extinct,
+};
+if(thisDinoObj.species.endsWith('us')){
+  thisDinoObj.species = thisDinoObj.species.slice(0,thisDinoObj.species.length-2)
+}else {
+  thisDinoObj.species = thisDinoObj.species}
+return thisDinoObj;
+
+}
+// const truncateSpecies
 
 /***********************
  * ITERATION FUNCTIONS *
